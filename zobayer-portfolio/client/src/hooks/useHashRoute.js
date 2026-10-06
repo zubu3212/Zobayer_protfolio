@@ -12,7 +12,11 @@ export default function useHashRoute(valid) {
     const onChange = () => {
       const p = read()
       setPage(valid.includes(p) ? p : 'home')
-      window.scrollTo({ top: 0, behavior: 'instant' })
+      // ধীরে স্ক্রল না করে সাথে সাথে ওপরে যাবে
+      const root = document.documentElement
+      root.style.scrollBehavior = 'auto'
+      window.scrollTo(0, 0)
+      requestAnimationFrame(() => { root.style.scrollBehavior = '' })
     }
     window.addEventListener('hashchange', onChange)
     return () => window.removeEventListener('hashchange', onChange)

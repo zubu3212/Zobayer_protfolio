@@ -2,16 +2,9 @@ import { useState } from 'react'
 import { Moon, Sun, Menu, X } from 'lucide-react'
 
 const links = [
-  { label: 'Home', key: 'home' },
-  { label: 'About', key: 'about' },
-  { label: 'Skills', key: 'skills' },
-  { label: 'Services', key: 'services' },
-  { label: 'Projects', key: 'projects' },
-  { label: 'Journey', key: 'journey' },
-  { label: 'Education', key: 'education' },
-  { label: 'Leadership', key: 'leadership' },
-  { label: 'Resume', key: 'resume' },
-  { label: 'Contact', key: 'contact' },
+  { label: 'Home', key: 'home' }, { label: 'About', key: 'about' }, { label: 'Skills', key: 'skills' },
+  { label: 'Services', key: 'services' }, { label: 'Projects', key: 'projects' }, { label: 'Journey', key: 'journey' },
+  { label: 'Education', key: 'education' }, { label: 'Leadership', key: 'leadership' }, { label: 'Resume', key: 'resume' }, { label: 'Contact', key: 'contact' },
 ]
 const href = (k) => (k === 'home' ? '#/' : `#/${k}`)
 
@@ -19,18 +12,13 @@ export default function Navbar({ dark, toggle, page }) {
   const [open, setOpen] = useState(false)
   return (
     <header className="glass fixed inset-x-0 top-0 z-50 border-x-0 border-t-0">
-      <nav aria-label="Main" className="mx-auto flex h-16 wrap-w items-center justify-between px-5">
+      <nav aria-label="Main" className="wrap-w flex h-16 items-center justify-between">
         <a href="#/" className="font-display text-lg font-semibold">Zobayer<span className="text-accent">.</span></a>
         <ul className="hidden items-center gap-5 text-sm xl:flex">
           {links.map((l) => (
             <li key={l.key}>
-              <a
-                href={href(l.key)}
-                aria-current={page === l.key ? 'page' : undefined}
-                className={page === l.key ? 'font-semibold text-accent' : 'text-muted hover:text-accent'}
-              >
-                {l.label}
-              </a>
+              <a href={href(l.key)} aria-current={page === l.key ? 'page' : undefined}
+                className={page === l.key ? 'font-semibold text-accent' : 'text-muted hover:text-accent'}>{l.label}</a>
             </li>
           ))}
         </ul>
@@ -47,14 +35,8 @@ export default function Navbar({ dark, toggle, page }) {
         <ul id="mobile-menu" className="border-t border-line bg-bg px-5 py-3 xl:hidden">
           {links.map((l) => (
             <li key={l.key}>
-              <a
-                onClick={() => setOpen(false)}
-                href={href(l.key)}
-                aria-current={page === l.key ? 'page' : undefined}
-                className={`block py-2.5 ${page === l.key ? 'font-semibold text-accent' : 'text-muted hover:text-accent'}`}
-              >
-                {l.label}
-              </a>
+              <a onClick={() => setOpen(false)} href={href(l.key)} aria-current={page === l.key ? 'page' : undefined}
+                className={`block py-2.5 ${page === l.key ? 'font-semibold text-accent' : 'text-muted hover:text-accent'}`}>{l.label}</a>
             </li>
           ))}
         </ul>
