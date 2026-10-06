@@ -1,0 +1,4 @@
+{"name":"portfolio-server","private":true,"version":"1.0.0","type":"module",
+"scripts":{"dev":"node --watch --env-file=.env src/index.js","start":"node src/index.js","db:init":"node --env-file=.env src/initDb.js"},
+"engines":{"node":">=20"},
+"dependencies":{"cors":"^2.8.5","express":"^4.21.1","express-rate-limit":"^7.4.1","helmet":"^8.0.0","pg":"^8.13.1"}}
