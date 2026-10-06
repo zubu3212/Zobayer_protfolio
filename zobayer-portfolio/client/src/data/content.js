@@ -39,12 +39,13 @@ export const aboutTags = [
 
 // github / demo এ আসল লিংক বসাও। ফাঁকা ('') রাখলে ওই বাটন বন্ধ থাকবে, ভাঙা লিংক থাকবে না।
 export const projects = [
-  {
+    {
     title: 'Smart EdTech Portal & AI LMS',
     desc: 'Full-stack AI-powered LMS with role-based authentication and secure sessions. A Pandas-based recommendation engine analyzes quiz data to find knowledge gaps, with REST APIs for grading, bulk CSV processing, live class analytics in Chart.js, and an AI study chatbot.',
     tags: ['FastAPI', 'Python', 'PostgreSQL', 'Pandas', 'JavaScript', 'Chart.js'],
-    github: '',
-    demo: '',
+    github: 'https://github.com/zubu3212/Smart-AI-EdTech-LMS',
+    demo: 'https://smart-ai-edtech-lms.netlify.app/',
+    image: '/smart-lms.png',
     hue: 265,
   },
   {
